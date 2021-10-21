@@ -8,6 +8,6 @@ RUN cd /tmp && apk add git maven --no-cache &&\
     mvn install &&\
     mv ./xxl-job-admin/target/xxl-job-admin*.jar /usr/local/bin/xxl-job-admin.jar &&\
     rm -rf /tmp/xxl-job && \
-    git del git maven
+    apk del git maven
 
 ENTRYPOINT ["sh","-c","java -jar /usr/local/bin/xxl-job-admin.jar $PARAMS"]
