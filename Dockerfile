@@ -2,7 +2,7 @@ FROM openjdk:8u212-jdk-alpine
 
 ENV PARAMS=""
 
-RUN cd /tmp && apk get git maven --no-cache &&\
+RUN cd /tmp && apk add git maven --no-cache &&\
     git clone https://github.com/xuxueli/xxl-job.git &&\
     cd xxl-job/ &&\
     mvn install &&\
